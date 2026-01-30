@@ -318,7 +318,7 @@ let captureCounter = 0;
 let chromeProcess = null;
 let chromeHeadless = true; // Default to headless mode
 let chromeUserDataDir = null;
-let chromeProfileName = 'superpowers-chrome'; // Default profile name
+let chromeProfileName = process.env.CHROME_PROFILE || 'superpowers-chrome'; // Default profile name, configurable via CHROME_PROFILE env var
 
 // Helper to resolve tab index or ws URL to actual ws URL
 async function resolveWsUrl(wsUrlOrIndex) {
