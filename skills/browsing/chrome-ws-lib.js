@@ -1339,6 +1339,11 @@ async function startChrome(headless = null, profileName = null) {
     args.push('--headless=new');
   }
 
+  // Add window size if specified via CHROME_WINDOW_SIZE env var (format: "width,height")
+  if (process.env.CHROME_WINDOW_SIZE) {
+    args.push(`--window-size=${process.env.CHROME_WINDOW_SIZE}`);
+  }
+
   const proc = spawn(chromePath, args, {
     detached: true,
     stdio: 'ignore'
