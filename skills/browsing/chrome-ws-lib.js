@@ -1308,7 +1308,7 @@ async function startChrome(headless = null, profileName = null) {
   }
 
   const args = [
-    `--remote-debugging-port=9222`,
+    `--remote-debugging-port=${CHROME_DEBUG_PORT}`,
     `--user-data-dir=${chromeUserDataDir}`,
     '--no-first-run',
     '--no-default-browser-check',
